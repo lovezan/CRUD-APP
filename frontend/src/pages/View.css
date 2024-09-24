@@ -1,0 +1,110 @@
+/* 3D effect container */
+.view-container {
+  margin: 40px auto;
+  padding: 40px;
+  width: 60%;
+  background: linear-gradient(
+    145deg,
+    #1e1e1e,
+    #262626
+  ); /* Dark gradient background */
+  border-radius: 15px;
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2),
+    -12px -12px 24px rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  transform: perspective(800px) rotateY(0deg); /* 3D rotation effect */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* 3D hover effect */
+.view-container:hover {
+  transform: perspective(800px) rotateY(10deg) rotateX(-5deg); /* Slight tilt for 3D effect */
+  box-shadow: 12px 12px 40px rgba(0, 0, 0, 0.4),
+    -12px -12px 40px rgba(255, 255, 255, 0.1); /* Deeper shadow on hover */
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #ffdf00; /* Futuristic yellow title */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds depth to the text */
+}
+
+.user-details {
+  margin-bottom: 30px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Fancy label styles */
+.user-details p {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  color: #ffdf00;
+  display: inline-block;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.user-details p::before {
+  content: "•"; /* Adds a bullet point before the text */
+  font-size: 28px;
+  color: #fff;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.user-details p:hover::before {
+  transform: translateY(-50%) scale(1.3); /* Enlarges the bullet on hover */
+}
+
+.user-details p span {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 10px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 22px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.user-details p span:hover {
+  background-color: rgba(
+    255,
+    223,
+    0,
+    0.2
+  ); /* Slight yellow highlight on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.back-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ffdf00;
+  color: #1b1b1b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-link:hover {
+  background-color: #ffe74a; /* Lighter yellow on hover */
+  transform: translateY(-5px); /* 3D floating effect on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,127 @@
+/* General Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background for the body */
+  color: #ffffff; /* White text for better contrast */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5vw;
+  background-color: #1f1f1f;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw;
+  box-shadow: 0 4px 8px rgba(51, 14, 14, 0.6); /* More pronounced shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3D effect on scroll */
+.header:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 1.8rem; /* Increased font size */
+  font-weight: bold;
+  background: linear-gradient(145deg, #ffcc00, #ffe680); /* 3D gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Text gradient */
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Navigation Links */
+.header-right {
+  display: flex;
+  gap: 40px; /* Increased space between links */
+}
+
+/* Link Styles */
+.header-right p {
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  border-radius: 8px; /* Rounded corners for smoother appearance */
+  position: relative;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1); /* Slight background for link */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 3D box-shadow */
+  backdrop-filter: blur(3px); /* Adding blur for glassmorphism effect */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Active Link Styles */
+.header-right p.active {
+  font-weight: bold;
+  color: #ffcc00; /* Highlight active link */
+  border-bottom: 2px solid #ffcc00;
+  transform: translateY(-2px);
+}
+
+/* Hover Effects for Links */
+.header-right p:hover {
+  background-color: rgba(255, 204, 0, 0.3);
+  color: #ffcc00;
+  transform: translateY(-2px) scale(1.05); /* 3D hover effect */
+  box-shadow: 0 6px 12px rgba(255, 204, 0, 0.4); /* Add shadow for hover */
+}
+
+/* 3D Hover Underline */
+.header-right p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background-color: #ffcc00;
+  transition: width 0.3s ease-in-out;
+}
+
+.header-right p:hover::after {
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 5%;
+  }
+
+  .header-right {
+    width: auto;
+    gap: 20px;
+  }
+
+  .header-right p {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.6rem; /* Smaller logo for mobile */
+  }
+}
+
+/* Body Padding */
+body {
+  padding-top: 70px;
+}
